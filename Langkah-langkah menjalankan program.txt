@@ -1,0 +1,24 @@
+Untuk mencoba project ini silakan buat database dengan MySQL xampp dengan nama tasks,
+kemudian buat tabel dengan nama account dan task,
+Berikut attribute tabel account:
+`id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` int(11) NOT NULL
+dengan id sebagai primary key,
+
+kemudian attribute tabel task:
+`id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `due_date` datetime DEFAULT NULL,
+  `complete` tinyint(1) NOT NULL,
+  `id_account` int(11) NOT NULL
+dengan primary key id, dan foreign key id_account,
+
+
+setelah itu npm install pada folder backend,
+dan jalankan dengan perintah "npm run api-service"
+
+setelah itu, buka folder frontend -> wings-tasks dan juga lakukan npm install,
+kemudian jalankan dengan perintah "npm run dev"
