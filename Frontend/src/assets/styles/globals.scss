@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .menu-selection {
+    @apply bg-[#E8F6FF] text-[#008DEB] font-bold;
+  }
+
+  .custom-shadow {
+    @apply shadow-black;
+  }
+
+  .navigation-menu {
+    @apply min-w-[100px] py-5 flex hover:menu-selection px-5 items-center;
+  }
+}
+
+@layer styling {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  @keyframes slideIn {
+    from {
+      width: 0;
+    }
+    to {
+      width: 300px;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      width: 300px;
+    }
+    to {
+      width: 0;
+    }
+  }
+
+  .open-animation {
+    animation: slideIn 0.5s ease forwards;
+    will-change: transform;
+  }
+
+  .close-animation {
+    animation: slideOut 0.5s ease forwards;
+    will-change: transform;
+  }
+
+  .m-0-auto {
+    margin: 0 auto;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mapboxgl-popup-tip {
+    display: none;
+  }
+
+  .submenu-content {
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+  }
+
+  .submenu-content.open {
+    max-height: 500px;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #888;
+    border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+}
